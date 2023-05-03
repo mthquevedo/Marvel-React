@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Footer />
+      <Footer enderecoImagem="/assets/img/logo-marvel-2048.png" textoAlternativo="Marvel logo"/>
     </div>
   );
 }

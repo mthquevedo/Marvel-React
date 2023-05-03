@@ -1,8 +1,8 @@
 import Navbar from "../Navbar";
 import "./Header.css";
-import Criadores from "../Páginas/Criadores";
-import Personagens from "../Páginas/Personagens";
-import Quadrinhos from "../Páginas/Quadrinhos";
+import Criadores from "../Body/Criadores";
+import Personagens from "../Body/Personagens";
+import Quadrinhos from "../Body/Quadrinhos";
 import { Route, Routes } from "react-router-dom";
 
 function Header() {
