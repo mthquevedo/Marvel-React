@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #fff;
+  padding: 1.25rem 1.875rem;
+  background-color: #1E1E1E;
+}
+
+.footer img {
+  width: 10rem;
+}
