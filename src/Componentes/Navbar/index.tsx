@@ -10,7 +10,7 @@ interface NavbarProps {
 function Navbar() {
   return (
     <nav className="nav">
-      <img src="/assets/img/Marvel-Comics-Logo-1983.png"></img>
+      <img src="/assets/img/Marvel-Comics-Logo-1983.png" alt="Logotipo preto da Marvel"></img>
 
       <ul>
         <CustomLink to="/personagens">PERSONAGENS</CustomLink>
