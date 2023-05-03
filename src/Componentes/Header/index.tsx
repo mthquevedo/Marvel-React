@@ -8,11 +8,11 @@ import { Route, Routes } from "react-router-dom";
 function Header() {
   return (
     <header className="header">
-      <Navbar />
+      <Navbar />  
       <Routes>
         <Route path="/personagens" element={<Personagens />} />
         <Route path="/quadrinhos" element={<Quadrinhos />} />
-        <Route path="/criadores" element={<Criadores />} />
+        <Route path="/criadores" element={<Criadores/>} />
       </Routes>
     </header>
   );

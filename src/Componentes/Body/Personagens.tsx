@@ -1,4 +1,4 @@
-function Personagens() {
+function Personagens () {
     return (<h1>Personagens</h1>
     )
 }

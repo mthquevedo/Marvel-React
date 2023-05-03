@@ -1,4 +1,4 @@
-function Criadores() {
+function Criadores () {
     return (<h1>Criadores</h1>
     )
 }

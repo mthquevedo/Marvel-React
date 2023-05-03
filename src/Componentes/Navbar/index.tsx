@@ -1,6 +1,12 @@
 import "./Navbar.css";
 import {Link, useMatch, useResolvedPath} from "react-router-dom"
 
+interface NavbarProps {
+  to: string
+  children: string
+
+}
+
 function Navbar() {
   return (
     <nav className="nav">
@@ -15,7 +21,7 @@ function Navbar() {
   );
 }
 
-function CustomLink({ to, children, ...props }) {
+function CustomLink({ to, children, ...props }: NavbarProps) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({path: resolvedPath.pathname, end:true})
   return (
