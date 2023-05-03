@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import {Link, useMatch, useResolvedPath} from "react-router-dom"
 
 function Navbar() {
   return (
@@ -6,26 +7,21 @@ function Navbar() {
       <img src="/assets/img/Marvel-Comics-Logo-1983.png"></img>
 
       <ul>
-        <li className="ativa">
-          <a href="/personagens" className="nav-title">
-            {" "}
-            PERSONAGENS
-          </a>
-        </li>
-        <li>
-          <a href="/quadrinhos" className="nav-title">
-            {" "}
-            QUADRINHOS
-          </a>
-        </li>
-        <li>
-          <a href="/criadores" className="nav-title">
-            {" "}
-            CRIADORES
-          </a>
-        </li>
+        <CustomLink to="/personagens">PERSONAGENS</CustomLink>
+        <CustomLink to="/quadrinhos">QUADRINHOS</CustomLink>
+        <CustomLink to="/criadores">CRIADORES</CustomLink>
       </ul>
     </nav>
+  );
+}
+
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({path: resolvedPath.pathname, end:true})
+  return (
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>{children}</Link>
+    </li>
   );
 }
 
