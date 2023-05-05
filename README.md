@@ -31,6 +31,6 @@ Tecnologias utilizadas:
 
 **Barra de pesquisa**: Ao digitar uma busca ele vai direcionar os cards para que correspondam ao que foi preenchido no input, ao apagar o conteúdo a aplicação retornará ao estado inicial onde organiza alfabeticamente.
 
-**Cookies de navegador**: Os nomes digitados no input serão armazenados no em "Aplicação/ Armazenamento Local" do navegador
+**Cookies de navegador**: Os nomes digitados no input serão armazenados no em "Aplicação/ Armazenamento Local" do navegador.
 
 Divirta-se!
