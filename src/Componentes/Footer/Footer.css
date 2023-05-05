@@ -4,7 +4,10 @@
   justify-content: space-between;
   font-size: 1rem;
   color: #fff;
-  padding: 1.25rem 1.875rem;
+  height: 100px;
+  margin-top: 15px;
+  padding: 1.25rem 4rem;
+  box-sizing: border-box;
   background-color: #1E1E1E;
 }
 
@@ -13,5 +16,5 @@
 }
 
 .footer img {
-  width: 10rem;
+  width: 9rem;
 }

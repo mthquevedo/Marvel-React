@@ -6,9 +6,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 1.875rem;
+    padding: 1.25rem 4rem;
     box-sizing: border-box;
-    font-size: 1.1rem;
+    font-family: 'Open sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
     font-weight: 700;
     color: #000000;
     list-style: none;
@@ -22,7 +24,7 @@ body {
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 10rem;
+    gap: 5rem;
 }
 
 .nav img {
