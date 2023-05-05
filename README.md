@@ -1,6 +1,6 @@
 ## Esse projeto é um website interativo construído em React e que utiliza a API Marvel
 
-Protótipo: https://www.figma.com/file/T6BLI1HfB81eYOiVgpqQz7/Projeto-Intro-ao-React?node-id=134-128
+Protótipo: https://www.figma.com/file/OJLnyyzvluN3KWp2spmT5I/Marvel-React---MQ?node-id=0-1&t=61MW5F56hyrOGCGX-0
 
 As tecnologias utilizadas foram:
 * React;

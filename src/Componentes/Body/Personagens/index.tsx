@@ -14,20 +14,28 @@ interface ResponseData {
     back: string;
 }
 
-
-
 const Personagens: React.FC = () => {
     const [characters, setCharacters] = useState<ResponseData[]>([]);
+    const [search, setSearch] = useState("");
+    const [searchInput, setSearchInput] = useState("");
 
     useEffect(() => {
-        api
-            .get('/characters')
-            .then(response => {
-                console.log(response.data.data.results)
-                setCharacters(response.data.data.results);
-            })
-            .catch(err => console.log(err))
-    }, []);
+    api
+      .get(`/characters?nameStartsWith=${search}`)
+      .then((response) => {
+        setCharacters(response.data.data.results);
+      })
+      .catch((err) => console.log(err));
+  }, [search]);
+
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+    if (e.target.value === "") {
+      setSearch("a");
+    } else {
+      setSearch(e.target.value);
+    }
+  };
 
     const carregarMais = useCallback(async () => {
         try {
@@ -45,6 +53,7 @@ const Personagens: React.FC = () => {
         }
     }, [characters])
 
+
     function botao() {
         return (
             <BotaoMais onClick={carregarMais} />
@@ -54,6 +63,11 @@ const Personagens: React.FC = () => {
     return (
         <><div className='titulo'>
             <h1>PERSONAGENS</h1>
+            <input type="search"
+                placeholder="Busque aqui"
+                value={searchInput}
+                onChange={handleSearchInputChange} />
+
         </div>
             <div className='card-list'>
                 {characters.map(character => {
@@ -74,10 +88,3 @@ const Personagens: React.FC = () => {
 };
 
 export default Personagens;
-
-    // useEffect(() => {
-    //     axios
-    //         .get(`${baseURL}ts=${time}&apikey=${publicKey}&hash=${hash}`)
-    //         .then(response => console.log(response.data.data))
-    //         .catch(error => console.log(error))
-    // }, []);

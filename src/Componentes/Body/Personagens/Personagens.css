@@ -1,9 +1,26 @@
 .titulo{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-weight: 700;
     color: #D71515;
     margin-bottom: 10px;
+}
+
+.titulo input{
+    width: 40vw;
+    height: 4vh;
+    padding: 10px;
+    border-style: none;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #545454;
+    box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3)
+}
+
+.titulo input::placeholder{
+    color: #fff;
 }
 
 .card-list {
