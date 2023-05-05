@@ -14,6 +14,5 @@ const api = axios.create({
     ts: ts,
     hash: hash,
   },
-});
-
+})
 export default api

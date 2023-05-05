@@ -16,26 +16,26 @@ interface ResponseData {
 
 const Personagens: React.FC = () => {
     const [characters, setCharacters] = useState<ResponseData[]>([]);
-    const [search, setSearch] = useState("");
     const [searchInput, setSearchInput] = useState("");
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
-    api
-      .get(`/characters?nameStartsWith=${search}`)
-      .then((response) => {
-        setCharacters(response.data.data.results);
-      })
-      .catch((err) => console.log(err));
-  }, [search]);
+        api
+            .get(`/characters?nameStartsWith=${search}`)
+            .then((response) => {
+                setCharacters(response.data.data.results);
+            })
+            .catch((err) => console.log(err));
+    }, [search]);
 
-  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value);
-    if (e.target.value === "") {
-      setSearch("a");
-    } else {
-      setSearch(e.target.value);
-    }
-  };
+    const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchInput(e.target.value);
+        if (e.target.value === "") {
+            setSearch("a");
+        } else {
+            setSearch(e.target.value);
+        }
+    };
 
     const carregarMais = useCallback(async () => {
         try {
@@ -53,6 +53,12 @@ const Personagens: React.FC = () => {
         }
     }, [characters])
 
+    function handleSearch() {
+        const dados = characters;
+        const pesquisas = JSON.stringify(dados.map(character => character.name));
+
+        localStorage.setItem('dados', pesquisas)
+    }
 
     function botao() {
         return (
@@ -61,29 +67,33 @@ const Personagens: React.FC = () => {
     }
 
     return (
-        <><div className='titulo'>
-            <h1>PERSONAGENS</h1>
-            <input type="search"
-                placeholder="Busque aqui"
-                value={searchInput}
-                onChange={handleSearchInputChange} />
+        <>
+            <div className='container-personagens'>
+                <div className='titulo'>
+                    <h1>PERSONAGENS</h1>
+                    <input type="search"
+                        placeholder="Busque aqui o nome do personagem"
+                        value={searchInput}
+                        onChange={handleSearchInputChange}
+                        onClick={handleSearch} />
 
-        </div>
-            <div className='card-list'>
-                {characters.map(character => {
-                    const urlImg = character.thumbnail.path + '.' + character.thumbnail.extension;
-                    const back = { backgroundImage: `url(${urlImg})` };
-                    return (
-                        <><div className='card' key={character.id}>
-                            <div id="img" style={back} />
-                            <h2>{character.name}</h2>
-                            <p>{character.description}</p>
-                        </div>
-                        </>
-                    )
-                })}
+                </div>
+                <div className='card-list'>
+                    {characters.map(character => {
+                        const urlImg = character.thumbnail.path + '.' + character.thumbnail.extension;
+                        const back = { backgroundImage: `url(${urlImg})` };
+                        return (
+                            <><div className='card' key={character.id}>
+                                <div id="img" style={back} />
+                                <h2>{character.name}</h2>
+                                <p>{character.description}</p>
+                            </div>
+                            </>
+                        )
+                    })}
+                </div>
+                {botao()}
             </div>
-            {botao()}
         </>);
 };
 
