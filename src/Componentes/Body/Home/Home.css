@@ -1,0 +1,35 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 3rem;
+}
+
+.titulo-home {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #D71515;
+}
+
+.img-banner {
+    width: 50vw;
+    height: 50vh;
+    border-radius: 10px;
+}
+
+.img-flex {}
+
+.cont-flex {
+    display: flex;
+    flex-direction: column;
+    line-height: 15px;
+    align-items: flex-end;
+}
+
+.cont-flex p {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
