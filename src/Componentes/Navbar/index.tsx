@@ -1,17 +1,16 @@
 import "./Navbar.css";
-import {Link, useMatch, useResolvedPath} from "react-router-dom"
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 interface NavbarProps {
   to: string
-  children: string
-
+  children: React.ReactNode;
 }
 
 function Navbar() {
   return (
     <nav className="nav">
-      <img src="/assets/img/Marvel-Comics-Logo-1983.png" alt="Logotipo preto da Marvel"></img>
-
+      <LogoMarvel to="/"><img src="/assets/img/Marvel-Comics-Logo-1983.png" alt="Logotipo preto da Marvel"></img></LogoMarvel>
+      
       <ul>
         <CustomLink to="/personagens">PERSONAGENS</CustomLink>
         <CustomLink to="/quadrinhos">QUADRINHOS</CustomLink>
@@ -23,9 +22,17 @@ function Navbar() {
 
 function CustomLink({ to, children, ...props }: NavbarProps) {
   const resolvedPath = useResolvedPath(to)
-  const isActive = useMatch({path: resolvedPath.pathname, end:true})
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
   return (
     <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>{children}</Link>
+    </li>
+  );
+}
+
+function LogoMarvel({ to, children, ...props }: NavbarProps) {
+  return (
+    <li>
       <Link to={to} {...props}>{children}</Link>
     </li>
   );
