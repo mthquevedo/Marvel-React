@@ -8,7 +8,7 @@ Protótipo inicial: https://www.figma.com/file/OJLnyyzvluN3KWp2spmT5I/Marvel-Rea
 
 ##
 
-Esse repositório contém o projeto de uma aplicação que consome a API da Marvel para exibir dados de personagens, HQ's e seus criadores. A ideia era se desafiar a aprender React e Typescript em uma semana e já desenvolver o website ao mesmo tempo.
+Esse repositório contém o projeto de uma aplicação que consome a API da Marvel para exibir dados de personagens, HQ's e seus criadores. A ideia era se desafiar a aprender React e Typescript em 5 dias e já desenvolver o website ao mesmo tempo.
 
 Foi uma ótima experiência e em breve pretendo refatorar a aplicação otimizando o que já foi desenvolvido e incrementando novas features.
 
